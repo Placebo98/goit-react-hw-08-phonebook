@@ -16,23 +16,21 @@ export class App extends Component {
     filter: '',
   };
 
-  componentDidMount() { 
-    const savedContacts = localStorage.getItem('contacts')
+  componentDidMount() {
+    const savedContacts = localStorage.getItem('contacts');
     console.log(savedContacts);
     if (savedContacts !== null) {
       this.setState({
-        contacts: JSON.parse(savedContacts)
-      })
+        contacts: JSON.parse(savedContacts),
+      });
     }
   }
-  
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.contacts != this.state.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
-  } }
-  
-
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   addContact = newContact => {
     const { contacts } = this.state;
@@ -80,7 +78,7 @@ export class App extends Component {
         <Application>
           <div>
             <FormTitle>Phonebook</FormTitle>
-            <ContactForm onAddContact={this.addContact}></ContactForm>
+            <ContactForm onAddContact={this.addContact} />
           </div>
           <div>
             <FormTitle>Contacts</FormTitle>
