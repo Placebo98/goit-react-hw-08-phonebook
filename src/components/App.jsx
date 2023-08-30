@@ -20,12 +20,10 @@ export const App = () => {
   useEffect(() => {
     const savedContacts = localStorage.getItem('contacts');
     console.log(savedContacts);
-    if (savedContacts !== null) {
-      setContacts({
-        contacts: JSON.parse(savedContacts),
-      });
+    if (savedContacts) {
+      setContacts(JSON.parse(savedContacts));
     }
-  }, [contacts]);
+  }, []);
 
   //Замена componentDidUpdate
   useEffect(() => {
@@ -60,18 +58,16 @@ export const App = () => {
   );
 
   return (
-    <div>
-      <Application>
-        <div>
-          <h2>Phonebook</h2>
-          <ContactForm onAddContact={addContact} />
-        </div>
-        <div>
-          <h2>Contacts</h2>
-          <Filter value={filter} onChange={changeContactFilter} />
-          <ContactList contacts={visibleContacts} onDelete={handleDelete} />
-        </div>
-      </Application>
-    </div>
+    <Application>
+      <div>
+        <h2>Phonebook</h2>
+        <ContactForm onAddContact={addContact} />
+      </div>
+      <div>
+        <h2>Contacts</h2>
+        <Filter value={filter} onChange={changeContactFilter} />
+        <ContactList contacts={visibleContacts} onDelete={handleDelete} />
+      </div>
+    </Application>
   );
 };
