@@ -16,16 +16,15 @@ export const App = () => {
   const [contacts, setContacts] = useState(initialContacts);
   const [filter, setFilter] = useState('');
 
-  //Замена componentDidMount
+  // Замена componentDidMount
   useEffect(() => {
     const savedContacts = localStorage.getItem('contacts');
-    console.log(savedContacts);
     if (savedContacts) {
       setContacts(JSON.parse(savedContacts));
     }
   }, []);
 
-  //Замена componentDidUpdate
+  // Замена componentDidUpdate
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
