@@ -18,8 +18,8 @@ const SignupSchema = Yup.object().shape({
 });
 
 export const ContactForm = ({ onAddContact }) => {
-  const contacts = useSelector(state => state.contacts);
-  const dispatch = useDispatch();
+  // const contacts = useSelector(state => state.contacts);
+  // const dispatch = useDispatch();
 
   return (
     <Formik
