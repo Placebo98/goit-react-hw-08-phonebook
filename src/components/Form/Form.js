@@ -10,7 +10,7 @@ import {
   StyledErrorName,
   StyledErrorNumber,
 } from './Form.styled';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string().min(1, 'Too Short!').required('Required'),
