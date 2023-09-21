@@ -10,16 +10,17 @@ import {
   StyledErrorName,
   StyledErrorNumber,
 } from './Form.styled';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/contactSlice';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string().min(1, 'Too Short!').required('Required'),
   number: Yup.number().min(5).required('Required'),
 });
 
-export const ContactForm = ({ onAddContact }) => {
-  // const contacts = useSelector(state => state.contacts);
-  // const dispatch = useDispatch();
+export const ContactForm = () => {
+  const contacts = useSelector(state => state.contacts);
+  const dispatch = useDispatch();
 
   return (
     <Formik
@@ -29,7 +30,18 @@ export const ContactForm = ({ onAddContact }) => {
       }}
       validationSchema={SignupSchema}
       onSubmit={(values, actions) => {
-        onAddContact({ ...values, id: nanoid() });
+        const isContactExists = contacts.contacts.find(
+          contact =>
+            contact.name.toLowerCase() === values.name.toLowerCase() ||
+            contact.number === values.number
+        );
+
+        if (isContactExists) {
+          alert(`${values.name} вже в списку ваших контактів`);
+        } else {
+          dispatch(addContact({ id: nanoid(), ...values }));
+        }
+
         actions.resetForm();
       }}
     >
