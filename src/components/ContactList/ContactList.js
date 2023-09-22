@@ -4,11 +4,15 @@ import { deleteContacts } from 'redux/contactSlice';
 
 export const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
+  const visibleContacts = contacts.contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.filter.toLowerCase())
+  );
   return (
     <List>
-      {contacts.contacts.map(contact => (
+      {visibleContacts.map(contact => (
         <ListItem key={contact.id}>
           {contact.name}:{''}
           {contact.number}
