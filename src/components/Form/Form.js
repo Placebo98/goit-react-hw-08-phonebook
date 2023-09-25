@@ -11,7 +11,7 @@ import {
   StyledErrorNumber,
 } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactSlice';
+import { addContact } from 'redux/operations';
 import { selectContacts } from 'redux/selectors';
 
 const SignupSchema = Yup.object().shape({
@@ -31,7 +31,7 @@ export const ContactForm = () => {
       }}
       validationSchema={SignupSchema}
       onSubmit={(values, actions) => {
-        const isContactExists = contacts.contacts.find(
+        const isContactExists = contacts.find(
           contact =>
             contact.name.toLowerCase() === values.name.toLowerCase() ||
             contact.number === values.number
