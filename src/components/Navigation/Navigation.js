@@ -1,35 +1,13 @@
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { HomePageLink } from './Navigation.styled';
+import { useAuth } from 'hooks/useAuth';
 
 export const Navigation = () => {
+  const { isLoggedIn } = useAuth();
   return (
     <nav>
       <HomePageLink to="/">Home</HomePageLink>
-      {/* {isLoggedIn && (
-//         <NavLink className={css.link} to="/tasks">
-//           Tasks
-//         </NavLink>
-//       )} */}
+      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
     </nav>
   );
 };
-
-// import { NavLink } from 'react-router-dom';
-// import { useAuth } from 'hooks';
-
-// export const Navigation = () => {
-//   const { isLoggedIn } = useAuth();
-
-//   return (
-//     <nav>
-//       <NavLink className={css.link} to="/">
-//         Home
-//       </NavLink>
-//       {isLoggedIn && (
-//         <NavLink className={css.link} to="/tasks">
-//           Tasks
-//         </NavLink>
-//       )}
-//     </nav>
-//   );
-// };
