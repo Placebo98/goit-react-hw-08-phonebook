@@ -33,7 +33,7 @@ export const Inputbox = styled.div`
 
 export const Label = styled.label`
   position: absolute;
-  top: 50%;
+  top: 5%;
   left: 5px;
   transform: translateY(-50%);
   color: white;
