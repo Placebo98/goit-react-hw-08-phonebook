@@ -10,7 +10,7 @@ import { Route, Routes } from 'react-router-dom';
 // import { Filter } from '../Filter/Filter';
 import { useDispatch } from 'react-redux';
 import { useEffect, lazy } from 'react';
-import { getAllContacts } from 'redux/operations';
+// import { getAllContacts } from 'redux/operations';
 import { Layout } from 'components/Layout';
 // import HomePage from 'pages/HomePage';
 // import HomePage from 'pages/HomePage/HomePage';
