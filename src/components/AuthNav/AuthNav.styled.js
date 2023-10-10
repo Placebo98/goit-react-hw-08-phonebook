@@ -14,7 +14,7 @@ export const AuthNavLink = styled(NavLink)`
   color: white;
   transition: color 250ms linear, font-size 250ms linear;
   &:hover {
-    color: red;
+    color: gold;
     font-size: 30px;
   }
 `;

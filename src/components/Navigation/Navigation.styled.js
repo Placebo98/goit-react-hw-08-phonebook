@@ -8,7 +8,7 @@ export const HomePageLink = styled(NavLink)`
   color: white;
   transition: color 250ms linear, font-size 250ms linear;
   &:hover {
-    color: red;
+    color: gold;
     font-size: 30px;
   }
 `;
@@ -21,7 +21,7 @@ export const ContactLink = styled(NavLink)`
   transition: color 250ms linear, font-size 250ms linear;
   margin-left: 20px;
   &:hover {
-    color: red;
+    color: gold;
     font-size: 30px;
   }
 `;
