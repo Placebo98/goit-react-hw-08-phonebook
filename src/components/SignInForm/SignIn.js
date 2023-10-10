@@ -29,7 +29,7 @@ export const SignInForm = () => {
     <Cont>
       <Section>
         <form onSubmit={handleSubmit} autoComplete="off">
-          <Title>Login</Title>
+          <Title>Sign In</Title>
           <Inputbox>
             {/* <ion-icon name="accessibility-outline"></ion-icon> */}
             <Input type="text" name="name" />

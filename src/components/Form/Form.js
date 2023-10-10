@@ -9,6 +9,8 @@ import {
   FormButton,
   StyledErrorName,
   StyledErrorNumber,
+  Inputbox,
+  Title,
 } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
@@ -47,13 +49,17 @@ export const ContactForm = () => {
       }}
     >
       <StyledForm>
-        <FormLabel htmlFor="name">Name</FormLabel>
-        <FormInput type="text" name="name" placeholder="Tsaryk Oleg" />
-        <StyledErrorName name="name" component="div" />
-
-        <FormLabel htmlFor="number">Number</FormLabel>
-        <FormInput type="tel" name="number" placeholder="380990512501" />
-        <StyledErrorNumber name="name" component="div" />
+        <Title>Add new contact</Title>
+        <Inputbox>
+          <FormLabel htmlFor="name">Name</FormLabel>
+          <FormInput type="text" name="name" placeholder="Tsaryk Oleg" />
+          <StyledErrorName name="name" component="div" />
+        </Inputbox>
+        <Inputbox>
+          <FormLabel htmlFor="number">Number</FormLabel>
+          <FormInput type="tel" name="number" placeholder="380990512501" />
+          <StyledErrorNumber name="name" component="div" />
+        </Inputbox>
         <FormButton type="submit">Add contact</FormButton>
       </StyledForm>
     </Formik>

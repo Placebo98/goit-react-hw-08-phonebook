@@ -20,7 +20,7 @@ export const Section = styled.section`
 
 export const Title = styled.h1`
   font-size: 2rem;
-  color: white;
+  color: gold;
   text-align: center;
 `;
 
@@ -74,6 +74,6 @@ export const Button = styled.button`
   font-weight: 600;
   transition: all 0.4s ease;
   &:hover {
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: gold;
   }
 `;

@@ -7,6 +7,7 @@ import {
   Input,
   Button,
   Cont,
+  Title,
 } from '../SignInForm/SignIn.styled';
 
 export const LogInForm = () => {
@@ -28,6 +29,7 @@ export const LogInForm = () => {
     <Cont>
       <Section>
         <form onSubmit={handleSubmit} autoComplete="off">
+          <Title>Login</Title>
           <Inputbox>
             {/* <ion-icon name="mail-outline"></ion-icon> */}
             <Input type="email" name="email" />
