@@ -12,3 +12,16 @@ export const HomePageLink = styled(NavLink)`
     font-size: 30px;
   }
 `;
+
+export const ContactLink = styled(NavLink)`
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  transition: color 250ms linear, font-size 250ms linear;
+  margin-left: 20px;
+  &:hover {
+    color: red;
+    font-size: 30px;
+  }
+`;
